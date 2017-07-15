@@ -1,0 +1,9 @@
+\section{ADDER}
+
+O sistema ADDER, descrito em \textcite{kiayias2006internet}, é baseado em criptografia homomórfica e chaves distribuídas entre as partes interessadas, implementado utilizando um servidor de registro (\textit{bulletin board}), um servidor de autenticação (\textit{gatekeeper}) separado do \textit{bulletin board} e um cliente \textit{web}.
+
+Votações utilizando o sistema ADDER são transparentes, de forma que todos os dados no \textit{bulletin board} são acessíveis publicamente. Estes dados incluem os votos criptografados, as chaves públicas e a contagem final dos votos. O \textit{bulletin board} não contém dados secretos. As votações também possuem verificabilidade universal, isto é, qualquer interessado pode auditar o procedimento inspecionando a transcrição da eleição.
+
+Estas características são importantes para sistemas criptográficos, uma vez que o mínimo possível de informações secretas é desejável para reduzir as possibilidades de falha do sistema, sendo uma proteção contra a segurança por obscuridade.
+
+O ADDER utiliza chaves criptográficas distribuídas entre múltiplas autoridades responsáveis, que podem ser os concorrentes da eleição e responsáveis pelo processo eleitoral, e utiliza um limiar para assegurar que o resultado final só pode ser revelado mediante cooperação de uma dada quantidade de autoridades. Qualquer tentativa de interferir no processo requer a corrupção de uma grande quantidade de autoridades, portanto, os eleitores podem garantir confiabilidade no processo e até participar ativamente dele.

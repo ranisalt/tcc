@@ -1,0 +1,11 @@
+\section{Helios}
+
+O sistema Helios, descrito em \textcite{adida2008helios}, funciona de forma semelhante ao ADDER e desenvolvido como uma plataforma de eleição, e suporta integração com diversos sistemas de \textit{login}, como CAS e OAuth.
+
+A construção da cédula é baseada no protocolo descrito por \textcite{benaloh2006simple}, que separa os processos de preparação e envio da cédula, de forma que mesmo um participante que não seja apto para votar possa acompanhar o processo de preparação, e apenas no passo final da cabine de votação a autenticação do eleitor se faz necessária.
+
+De um ponto de vista técnico, a descentralização da verificação do Helios permite alta confiabilidade no processo, uma vez que não há um ponto central de falha na votação e cada participante pode confirmar a contabilização do seu voto.
+
+No entanto, o sistema sofre com problemas de usabilidade~\cite{karayumak2011usability}, já que os eleitores não possuem prática suficiente para tal procedimento, muitas vezes ignorando a auditoria, que é uma das vantagens de sistemas auditáveis fim-a-fim.
+
+O Helios tem um funcionamento mais simples para o leitor que o Civitas, pois este último é dividido em subsistemas separados com única funcionalidade que trocam o mínimo necessário de informações, enquanto o primeiro é mais próximo de um sistema monolítico.
