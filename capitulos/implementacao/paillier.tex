@@ -1,0 +1,36 @@
+\section{Criptosistema de Paillier}
+
+Para realizar a criptografia dos votos para armazenamento, é necessário um
+sistema criptográfico de chaves assimétricas em que o subsistema de registro de
+votos possa realizar a contagem sem conhecimento da chave privada para
+descriptografar os dados. Isso implica que o sistema criptográfico utilizado
+tenha propriedades homomórficas, para que seja possível realizar operações com
+resultado conhecido diretamente no texto cifrado.
+
+A propriedade homomórfica é utilizada na contagem para que o resultado
+criptografado possa ser publicado para então ser aberto pelas autoridades
+detentoras da chave privada. Deve ser possível gerar o somatório dos votos
+apenas com a cifragem de cada voto.
+
+O criptosistema de Paillier~\cite{paillier1999public} foi escolhido por possuir
+estas características, sendo um criptosistema de chaves assimétricas com
+propriedades homomórficas cuja complexidade é dada pela hipótese de
+intratabilidade da residuosidade composta de decisão (do inglês
+\textit{decisional composite residuosity}, \textbf{DCR}).
+
+Além disso, o criptosistema de Paillier utiliza uma chave efêmera aleatória
+para cifragem, o que gera uma mensagem cifrada diferente cada vez que a mesma
+mensagem original é cifrada. Portanto, mesmo se dois eleitores votarem
+exatamente nas mesmas opções, o voto cifrado armazenado no banco de dados será
+diferente para cada um.
+
+Essa propriedade permite que os votos de um eleitor sejam representados pelos
+valores $0$ e $1$ caso o eleitor vote contra ou a favor de uma opção,
+respectivamente. Se a mensagem cifrada fosse igual para todos os valores
+iguais, seria fácil observar o registro público do \autoref{sect:registro} dos
+votos e obter informações sobre os votos sem conhecer a chave privada da
+eleição.
+
+A chave efêmera não é armazenada e não é necessária para decifrar a mensagem,
+portanto não é possível reproduzir o voto somente com as informações
+armazenadas no registro a fim de quebrar o sigilo do voto.

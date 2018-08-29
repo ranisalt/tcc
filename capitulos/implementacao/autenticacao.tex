@@ -1,7 +1,21 @@
 \section{Cadastro e autenticação de eleitores}
 
-O subsistema de cadastro e autenticação de eleitores é responsável por registrar os dados e confirmar a identidade dos eleitores que acessem o sistema de votação. Nos sistemas citados no \autoref{chap:trabalhos}, são utilizados diferentes sistemas de registro e autenticação, notadamente o uso de \textit{tokens} enviados para os eleitores antes da votação.
+O subsistema de cadastro e autenticação de eleitores é responsável por
+registrar os dados e confirmar a identidade dos eleitores que acessem o sistema
+de votação. Nos sistemas citados no \autoref{chap:trabalhos}, são utilizados
+diferentes sistemas de registro e autenticação, notadamente o uso de
+\textit{tokens} enviados para os eleitores antes da votação.
 
-O sistema Helios tem suporte a \textit{plugins} de autenticação, suportando padrões abertos de \textit{single sign-on} como CAS, OAuth, Shibboleth e sistemas de identificação federados como o OpenID através destes. Pode também, teoricamente, suportar autenticação através de \textit{smart cards} e outras formas de certificados digitais, mas seu repositório não integra estas soluções atualmente.
+O sistema Helios tem suporte a \textit{plugins} de autenticação, suportando
+padrões abertos de \textit{single sign-on} como CAS, OAuth, Shibboleth e
+sistemas de identificação federados como o OpenID através destes. Pode também,
+teoricamente, suportar autenticação através de \textit{smart cards} e outras
+formas de certificados digitais, mas seu repositório não integra estas soluções
+atualmente.
 
-A terceirização do serviço de autenticação permite delegar a confiabilidade deste para outra autoridade dedicada. Por exemplo, a maioria das universidades possui serviços de autenticação centralizada utilizando algum dos protocolos citados anteriormente, e a própria entidade garante a autenticidade dos seus registros e a autorização do seu uso. Isso reduz a superfície de ataque do sistema de eleição e o torna mais flexível e adaptável a novas tecnologias.
+A terceirização do serviço de autenticação permite delegar a confiabilidade
+deste para outra autoridade dedicada. Por exemplo, diversas universidades
+possuem serviços de autenticação centralizada utilizando algum dos protocolos
+citados anteriormente, e a própria entidade garante a autenticidade dos seus
+registros e a autorização do seu uso. Isso reduz a superfície de ataque do
+sistema de eleição e o torna mais flexível e adaptável a novas tecnologias.

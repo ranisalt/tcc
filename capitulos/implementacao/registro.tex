@@ -1,3 +1,20 @@
-\section{Registro de votos}
+\section{Registro público de votos}
+\label{sect:registro}
 
-O registro de votos é o sistema responsável por receber e armazenar com segurança os votos dos eleitores. Este sistema não deve ter capacidade de abrir os votos depositados, não tendo acesso à chave privada utilizada para decifrá-los. Dessa forma, sua responsabilidade é evitar votos duplicados, permitindo que um eleitor sobrescreva seu voto, e reportar para o sistema de contagem o resultado final.
+O registro de votos é o subsistema responsável por receber e armazenar com
+segurança os votos dos eleitores. Este sistema não deve ter capacidade de abrir
+os votos depositados, não tendo acesso à chave privada utilizada para
+decifrá-los. Dessa forma, sua responsabilidade é evitar votos duplicados,
+permitindo que um eleitor sobrescreva seu voto, e reportar para o sistema de
+contagem o resultado final.
+
+O subsistema de registro não deve ter acesso à chave privada de nenhuma
+eleição, para garantir o sigilo do voto. Deve somente fornecer uma interface
+para a inserção e conferência dos votos, como faz uma urna, repassando o
+somatório cifrado às autoridades de contagem ao final do processo.
+
+Pode ser implementado como uma camada fina de software sobre um banco de dados
+que confere a autenticação do usuário com o subsistema de autenticação,
+armazena os votos válidos de forma cifrada neste banco de dados e provê uma
+forma de visualização dos votos já inseridos, sem informações sobre os
+eleitores.
