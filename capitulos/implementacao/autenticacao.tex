@@ -8,10 +8,10 @@ diferentes sistemas de registro e autenticação, notadamente o uso de
 
 O sistema Helios tem suporte a \textit{plugins} de autenticação, suportando
 padrões abertos de \textit{single sign-on} como CAS, OAuth, Shibboleth e
-sistemas de identificação federados como o OpenID através destes. Pode também,
-teoricamente, suportar autenticação através de \textit{smart cards} e outras
-formas de certificados digitais, mas seu repositório não integra estas soluções
-atualmente.
+sistemas de identificação federados como o OpenID Connect através destes. Pode
+também, teoricamente, suportar autenticação através de \textit{smart cards} e
+outras formas de certificados digitais, mas seu repositório não integra estas
+soluções atualmente.
 
 A terceirização do serviço de autenticação permite delegar a confiabilidade
 deste para outra autoridade dedicada. Por exemplo, diversas universidades
@@ -19,3 +19,28 @@ possuem serviços de autenticação centralizada utilizando algum dos protocolos
 citados anteriormente, e a própria entidade garante a autenticidade dos seus
 registros e a autorização do seu uso. Isso reduz a superfície de ataque do
 sistema de eleição e o torna mais flexível e adaptável a novas tecnologias.
+
+Para a implementação de referência desenvolvida neste trabalho, optou-se por
+utilizar o sistema OpenID Connect, utilizando como servidor de autorização o
+Google. Desta forma, a autenticação de usuários é realizada por um terceiro, e
+o servidor do registro de votos não gerencia os usuários, se limitando a
+armazenar apenas o nome e e-mail.
+
+Utiliza-se também a tecnologia \textit{Credential Management API}
+(\textbf{CM-API}) para armazenar e recuperar credenciais federadas diretamente
+no \textit{browser}, simplificando o fluxo de reautenticação de uma sessão
+expirada. Essa tecnologia ainda é considerada experimental, estando disponível
+somente no navegador Chrome no momento de escrita deste trabalho.
+
+A combinação destas duas tecnologias permite armazenar o mínimo possível de
+informação sobre o eleitor no servidor de eleição, delegando a tarefa de
+autenticação para outros serviços de confiança do próprio usuário, como o
+navegador de sua preferência e o serviço de autenticação a ser consultado.
+
+A \textbf{CM-API} também prevê suporte para autenticação por senha e por chave
+pública. Para a autenticação por chave pública, é possível utilizar
+dispositivos de chave assimétrica, como \textit{smart cards} contendo
+certificados digitais para autenticação física dos usuários, se este nível de
+segurança for desejado. Nenhum navegador suporta este método no momento da
+escrita deste trabalho, mas Chrome e Firefox já possuem implementações
+parciais.
