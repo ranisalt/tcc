@@ -21,16 +21,17 @@ registros e a autorização do seu uso. Isso reduz a superfície de ataque do
 sistema de eleição e o torna mais flexível e adaptável a novas tecnologias.
 
 Para a implementação de referência desenvolvida neste trabalho, optou-se por
-utilizar o sistema OpenID Connect, utilizando como servidor de autorização o
-Google. Desta forma, a autenticação de usuários é realizada por um terceiro, e
-o servidor do registro de votos não gerencia os usuários, se limitando a
-armazenar apenas o nome e e-mail.
+utilizar o protocolo OpenID Connect~\cite{sakimura2014openid}, utilizando como
+servidor de autorização o Google. Desta forma, a autenticação de usuários é
+realizada por um terceiro, e o servidor do registro de votos não gerencia os
+usuários, se limitando a armazenar apenas o nome e e-mail.
 
 Utiliza-se também a tecnologia \textit{Credential Management API}
 (\textbf{CM-API}) para armazenar e recuperar credenciais federadas diretamente
 no \textit{browser}, simplificando o fluxo de reautenticação de uma sessão
-expirada. Essa tecnologia ainda é considerada experimental, estando disponível
-somente no navegador Chrome no momento de escrita deste trabalho.
+expirada~\cite{Credenti82:online}. Essa tecnologia ainda é considerada
+experimental, estando disponível somente no navegador Chrome no momento de
+escrita deste trabalho.
 
 A combinação destas duas tecnologias permite armazenar o mínimo possível de
 informação sobre o eleitor no servidor de eleição, delegando a tarefa de
