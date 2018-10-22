@@ -1,0 +1,27 @@
+\section{Protocolo de uma eleição}
+
+O protocolo de uma eleição utilizado no ADDER, e portanto no qual é inspirado
+este trabalho, se concentra em torno do registro digital público de votos,
+chamado de \textit{bulletin board} ou \textit{ledger}, e está descrito em
+\textcite{benaloh1987verifiable}. Este registro consiste em um mural público
+onde todos os usuários antenticados, tanto eleitores, autoridades e
+administradores podem inserir dados.
+
+Na implementação, o \textit{ledger} consiste em um banco de dados relacional
+acessado através de uma interface \textit{web} que armazena as credenciais de
+uma eleição e versões criptografadas dos votos, e um servidor de autenticação
+que emite \textit{tokens} com os quais os usuários podem se autenticar com o
+\textit{ledger} e realizar ações de acordo com sua permissão. Uma interface
+\textit{web} acessa os dados destes servidores de forma transparente.
+
+O procedimento de execução de uma eleição é dividido em passos sequenciais para
+criar as informações necessárias, receber os votos e calcular o resultado
+final.
+
+Para criar uma nova eleição, um administrador do sistema envia os parâmetros da
+nova eleição para o \textit{ledger} através da interface \textit{web}. Estes
+parâmetros são os identificadores da eleição, a lista de autoridades, a lista
+de eleitores, a quantidade mínima e máxima de candidatos por voto, a lista de
+candidatos, o limite mínimo de autoridades $t$ e os horários limites para os
+passos seguintes. Estas informações ficam publicamente disponíveis no
+\textit{ledger} para conferência.

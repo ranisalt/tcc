@@ -1,0 +1,20 @@
+\section{Compartilhamento de segredos de Shamir}
+
+Para dividir a responsabilidade de revelar a contagem final de votos entre
+múltiplas autoridades, se faz necessário um esquema de compartilhamento de
+segredos. Em \textcite{Shamir:1979:SS:359168.359176} é descrito um esquema de
+compartilhamentos baseado em polinômios, cuja ideia central é de que são
+necessários $k$ pontos para se definir um polinômio de grau $k - 1$.
+
+Utilizando este esquema, definimos um polinômio de grau $k - 1$, onde $k$ é a
+quantidade mínima de autoridades necessárias para se revelar os textos
+cifrados, dentre um total de $n$ autoridades tal que $0 < k \leq n$. Cada
+autoridade calcula sua decifragem parcial $c_i$ que será utilizada para
+reconstruir a mensagem original $m$ quando combinadas ao menos $k$ decifragens
+parciais.
+
+A definição do criptosistema de Paillier modificado para suportar o
+compartilhamento de segredos de Shamir utilizado neste trabalho encontra-se em
+\textcite{fouque2000sharing}. Embora haja uma implementação mais genérica em
+\textcite{damgaard2010generalization}, esta possui restrições quanto aos
+valores de $k$ em relação a $n$ que foram consideradas indesejáveis.
