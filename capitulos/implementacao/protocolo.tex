@@ -20,8 +20,70 @@ final.
 
 Para criar uma nova eleição, um administrador do sistema envia os parâmetros da
 nova eleição para o \textit{ledger} através da interface \textit{web}. Estes
-parâmetros são os identificadores da eleição, a lista de autoridades, a lista
-de eleitores, a quantidade mínima e máxima de candidatos por voto, a lista de
-candidatos, o limite mínimo de autoridades $t$ e os horários limites para os
-passos seguintes. Estas informações ficam publicamente disponíveis no
-\textit{ledger} para conferência.
+parâmetros são os identificadores da eleição, a lista de $n$ autoridades, a
+lista de eleitores, a quantidade mínima $m_{min}$ e máxima $m_{max}$ de
+candidatos por voto, a lista de candidatos, o limite mínimo de autoridades $t$
+e os horários limites para os passos seguintes. Estas informações ficam
+publicamente disponíveis no \textit{ledger} para conferência.
+
+No segundo passo, as autoridades devem submeter suas chaves públicas para o
+sistema, para que toda a comunicação de informação sensível entre o sistema e a
+autoridade se dê por forma criptografada, nunca em texto claro. A autoritade
+também deve submeter um desafio para provar que detém a chave privada
+relacionada à chave pública enviada. Se menos de $t$ autoridades enviarem
+chaves públicas até o prazo expirar para este passo, a eleição é encerrada com
+falha.
+
+No terceiro passo, o administrador que criou a eleição solicita que o sistema
+gere o par de chaves da eleição. Para isso, utiliza o algoritmo de geração de
+chaves descrito em \textcite{fouque2000sharing}, que cria uma chave pública,
+divide a chave privada entre as autoridades que participaram do passo anterior
+e envia cada parte por e-mail de forma criptografada. A chave pública e as
+chaves de verificação são publicados no \textit{ledger} junto com os outros
+detalhes da eleição gerados até agora. Se menos de $t$ autoridades confirmarem
+o recebimento de suas chaves privadas parciais até o prazo expirar para este
+passo, a eleição é encerrada com falha.
+
+Antes do quarto passo, que é a votação de fato, o administrador deve publicar a
+lista de eleitores no \textit{ledger}. Os eleitores são identificados
+unicamente por e-mail, e como especificado anteriormente, são autenticados por
+um servidor de autenticação externo.
+
+Durante a votação, somente os eleitores submetidos anteriormente podem inserir
+seus votos no \textit{ledger}. Os votos são cifrados e acompanhados de uma
+prova de formação correta, de forma que o eleitor pode conferir se seu voto
+cifrado está corretamente publicado e o sistema pode garantir que o eleitor
+votou em pelo menos $m_{min}$ opções e em até $m_{max}$ opções. O eleitor pode
+substituir seu voto quantas vezes desejar, de forma a mitigar tentativas de
+coerção, mas não impedindo-as.
+
+Este protocolo explicitamente não lida com o problema da coerção, pois com a
+natureza descentralizada do sistema proposto é excessivamente complexo
+controlar cada terminal de votação. Em vez disso, a possibilidade de substituir
+o voto a qualquer momento permite que o eleitor vote até mesmo em frente a um
+agressor e posteriormente desfaça seu voto. Esta é a mesma abordagem do sistema
+Helios.
+
+Encerrada a coleta de votos, no quinto passo o sistema faz a totalização dos
+votos, somando-os de forma homomórfica baseada nas propriedades do
+criptosistema de Paillier. O sistema deve considerar somente os votos
+corretamente formados e mais recentes de cada eleitor.
+
+No sexto passo, as autoridades submetem suas decifragens parciais do somatório
+dos votos, obtidos utilizando as chaves privadas parciais distribuídas no
+terceiro passo, acompanhados de provas da decifragem correta. Pelo esquema de
+\textcite{fouque2000sharing}, nenhuma autoridade sozinha pode obter o resultado
+final da eleição, somente uma combinação de pelo menos $t$ decifragens parciais
+permite encontrar o resultado total decifrado. Se menos de $t$ autoridades
+enviarem resultados parciais válidos até o prazo expirar para este passo, a
+eleição é encerrada com falha.
+
+No sétimo e último passo, o sistema combina as decifragens parciais e gera a
+totalização, que é então publicada no \textit{ledger} junto com os outros dados
+da eleição, e encerra com sucesso.
+
+O protocolo apresentado é uma simplificação do protocolo ADDER, uma vez que a
+geração de chaves do criptosistema ElGamal utilizado no ADDER é dividido em
+mais passos. A ideia de simplificar o protocolo e reduzir a necessidade de
+interação também tem o objetivo de facilitar o uso por autoridades e eleitores
+com menor conhecimento técnico.

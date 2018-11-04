@@ -1,7 +1,83 @@
 \subsection{Urnas eletrônicas}
 
-Seguindo as tendências da tecnologia, os sistemas eleitorais também foram computadorizados no fim do Século XX. No início do seu uso, a euforia ofuscou a discussão necessária sobre a segurança, privacidade e confiabilidade das urnas eletrônicas, mesmo depois de sua implementação nacional no Brasil e dos problemas encontrados em outros países.
+Seguindo as tendências da tecnologia, os sistemas eleitorais também foram
+computadorizados no fim do Século XX. No início do seu uso, a euforia ofuscou a
+discussão necessária sobre a segurança, privacidade e confiabilidade das urnas
+eletrônicas, mesmo depois de sua implementação nacional no Brasil e dos
+problemas encontrados em outros países.
 
-Nos Estados Unidos, a lei federal denominada \textit{Help America Vote Act} (HAVA), de 2002, tinha por objetivo incentivar a substituição dos sistemas de cartão perfurado e máquinas de alavancas por equipamentos mais modernos e estabelecer requisitos de acessibilidade aos locais de votação, o que tornava as urnas eletrônicas o único tipo de equipamento que os satisfazia~\cite{davis1996direct}.
+Em análise realizada por \textcite{kohno2004analysis}, destaca-se que as
+empresas que desenvolveram os primeiros terminais eletrônicos de votação o
+fizeram de forma que robustez, segurança e confiabilidade das eleições depende
+inteiramente do \textit{software} sendo executado pelos terminais. Se estes
+terminais pudessem ser manipulados, seja por eleitores ou desenvolvedores
+inescrupulosos, ou até pelo sistema operacional utilizado, a precisão dos
+resultados é posta em xeque.
 
-As urnas eletrônicas são amplamente criticadas por uso incorreto de funções criptográficas e baixa qualidade de código, respaldadas por operarem código proprietário e fechado em geral, e possibilidade de fraude em cartões de configuração, concentrando desconfiança de estudiosos da área~\cite{kohno2004analysis,feldman2006security}.
+Nos Estados Unidos, a lei federal denominada \textit{Help America Vote Act}
+(HAVA), de 2002, tinha por objetivo incentivar a substituição dos sistemas de
+cartão perfurado e máquinas de alavancas por equipamentos mais modernos e
+estabelecer requisitos de acessibilidade aos locais de votação, o que tornava
+as urnas eletrônicas o único tipo de equipamento que os
+satisfazia~\cite{davis1996direct}.
+
+Em análise realizada por \textcite{kohno2004analysis}, destaca-se que as
+empresas que desenvolveram os primeiros terminais eletrônicos de votação o
+fizeram de forma que robustez, segurança e confiabilidade das eleições depende
+inteiramente do \textit{software} sendo executado pelos terminais. Se estes
+terminais pudessem ser manipulados, seja por eleitores ou desenvolvedores
+inescrupulosos, ou até pelo sistema operacional utilizado, a precisão dos
+resultados é posta em xeque.
+
+As urnas eletrônicas são amplamente criticadas por uso incorreto de funções
+criptográficas e baixa qualidade de código, respaldadas por operarem código
+proprietário e fechado em geral, e possibilidade de fraude em cartões de
+configuração, concentrando desconfiança de estudiosos da
+área~\cite{feldman2006security}.
+
+A solução então proposta é a do voto impresso, formalmente conhecido como
+\textit{voter-verifiable audit trail} (rastro de auditoria verificável pelo
+eleitor). A parte mais importante é a de verificação pelo eleitor: se a máquina
+não gera uma impressão correta do voto, o papel é destruído mecanicamente e não
+é inserido na urna de auditoria. Desta forma, o funcionamento do terminal de
+votação não é mais o único ponto de falha, pois pode ser removido de circulação
+se estiver produzindo resultados incorretos.
+
+Esse tipo de vulnerabilidade é mais perigosa que as vulnerabilidades dos
+sistemas tradicionais de cédulas porque são sutis, imperceptíveis da visão do
+eleitor e das autoridades, e podem acontecer por mero descuido dos
+responsáveis. Como descoberto por \textcite{feldman2006security}, um modelo de
+urna eletrônica utilizada nos Estados Unidos poderia ser manipulada inserindo
+um cartão de memória com código malicioso em menos de um minuto, situação
+plausível uma vez que os operadores das urnas frequentemente as operam sem
+supervisão.
+
+A situação não é melhor em implementações utilizadas por outros países além do
+Brasil. Na maior democracia do mundo, a Índia, uma louvável iniciativa do
+governo instalou milhões de urnas eletrônicas de baixo custo em todo o país,
+até mesmo nas regiões mais remotas, para maximizar o sufrágio universal.
+Durante muito tempo, mesmo após a literatura amplamente depreciar as urnas sem
+voto impresso, o governo insistia que as urnas eram completamente seguras.
+
+Na rigorosa revisão por \textcite{wolchok2010security}, relata-se que tanto o
+\textit{software} quanto o \textit{hardware} das urnas utlizadas na Índia pode
+ser manipulado por um agressor com acesso ao dispositivo. Como as peças são
+construídas por terceiros, dificilmente um componente com um comportamento
+malicioso seria detectado na montagem da urna eletrônica, muito menos por um
+operador leigo. Além disso, o \textit{software} executado também é gravado no
+\textit{chip} por um terceiro, que poderia instalar uma versão adulterada que
+dificilmente levantaria suspeitas.
+
+Por fim, pela simplicidade da construção, um agressor poderia tentar substituir
+uma urna por um modelo adulterado, ou substituir componentes internos da urna
+por versões maliciosas, considerando que não há uma maneira prática para que
+operadores verifiquem a autenticidade das urnas sendo utilizadas.
+
+Praticamente todas as democracias do mundo que utilizam urnas eletrônicas e
+formas similares de terminais de votação, notadamente Venezuela, Países Baixos,
+Alemanha, Bélgica, Rússia e Equador, além dos já citados Estados Unidos e
+Índia, já substituíram urnas eletrônicas sem confirmação impressa do voto,
+agora chamadas de máquinas de primeira geração. O único país que ainda permite
+máquinas de primeira geração é o Brasil, que está em processo de substituição
+por máquinas de segunda geração, com confirmação impressa.
+
