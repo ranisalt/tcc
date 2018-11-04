@@ -21,27 +21,19 @@ estabelecer requisitos de acessibilidade aos locais de votação, o que tornava
 as urnas eletrônicas o único tipo de equipamento que os
 satisfazia~\cite{davis1996direct}.
 
-Em análise realizada por \textcite{kohno2004analysis}, destaca-se que as
-empresas que desenvolveram os primeiros terminais eletrônicos de votação o
-fizeram de forma que robustez, segurança e confiabilidade das eleições depende
-inteiramente do \textit{software} sendo executado pelos terminais. Se estes
-terminais pudessem ser manipulados, seja por eleitores ou desenvolvedores
-inescrupulosos, ou até pelo sistema operacional utilizado, a precisão dos
-resultados é posta em xeque.
-
 As urnas eletrônicas são amplamente criticadas por uso incorreto de funções
 criptográficas e baixa qualidade de código, respaldadas por operarem código
 proprietário e fechado em geral, e possibilidade de fraude em cartões de
 configuração, concentrando desconfiança de estudiosos da
 área~\cite{feldman2006security}.
 
-A solução então proposta é a do voto impresso, formalmente conhecido como
-\textit{voter-verifiable audit trail} (rastro de auditoria verificável pelo
-eleitor). A parte mais importante é a de verificação pelo eleitor: se a máquina
-não gera uma impressão correta do voto, o papel é destruído mecanicamente e não
-é inserido na urna de auditoria. Desta forma, o funcionamento do terminal de
-votação não é mais o único ponto de falha, pois pode ser removido de circulação
-se estiver produzindo resultados incorretos.
+A solução então proposta é a do voto impresso\index{voto impresso}, formalmente
+conhecido como \textit{voter-verifiable audit trail} (rastro de auditoria
+verificável pelo eleitor). A parte mais importante é a de verificação pelo
+eleitor: se a máquina não gera uma impressão correta do voto, o papel é
+destruído mecanicamente e não é inserido na urna de auditoria. Desta forma, o
+funcionamento do terminal de votação não é mais o único ponto de falha, pois
+pode ser removido de circulação se estiver produzindo resultados incorretos.
 
 Esse tipo de vulnerabilidade é mais perigosa que as vulnerabilidades dos
 sistemas tradicionais de cédulas porque são sutis, imperceptíveis da visão do
@@ -51,6 +43,19 @@ urna eletrônica utilizada nos Estados Unidos poderia ser manipulada inserindo
 um cartão de memória com código malicioso em menos de um minuto, situação
 plausível uma vez que os operadores das urnas frequentemente as operam sem
 supervisão.
+
+No discurso popular de tempos recentes, existem críticas ferrenhas ao modelo
+atual das urnas eletrônicas, das quais já foram encontradas inúmeras brechas de
+segurança nos últimos testes públicos, mesmo estes testes sendo executados sob
+forte vigilância do tribunal responsável. Em paralelo, escândalos de corrupção,
+compra de votos e afins apenas dão razão aos desafetos da evolução tecnológica
+do nosso sistema eleitoral.
+
+Dentre os poucos relatórios de agentes externos sobre os componentes internos
+da urna eletrônica, certamente o mais conhecido e completo é o de
+\textcite{aranha2012vulnerabilidades}, que apontou diversos problemas de
+segurança no \textit{software} executado na urna e também na maneira como o
+órgão responsável modelou os potenciais vetores de ataque ao sistema.
 
 A situação não é melhor em implementações utilizadas por outros países além do
 Brasil. Na maior democracia do mundo, a Índia, uma louvável iniciativa do
@@ -73,11 +78,11 @@ uma urna por um modelo adulterado, ou substituir componentes internos da urna
 por versões maliciosas, considerando que não há uma maneira prática para que
 operadores verifiquem a autenticidade das urnas sendo utilizadas.
 
-Praticamente todas as democracias do mundo que utilizam urnas eletrônicas e
-formas similares de terminais de votação, notadamente Venezuela, Países Baixos,
-Alemanha, Bélgica, Rússia e Equador, além dos já citados Estados Unidos e
-Índia, já substituíram urnas eletrônicas sem confirmação impressa do voto,
-agora chamadas de máquinas de primeira geração. O único país que ainda permite
-máquinas de primeira geração é o Brasil, que está em processo de substituição
-por máquinas de segunda geração, com confirmação impressa.
-
+Praticamente todas as democracias do mundo que utilizam urnas eletrônicas
+\index{países que usam urnas eletrônicas} e formas similares de
+terminais de votação, notadamente Venezuela, Países Baixos, Alemanha, Bélgica,
+Rússia e Equador, além dos já citados Estados Unidos e Índia, já substituíram
+urnas eletrônicas sem confirmação impressa do voto, agora chamadas de máquinas
+de primeira geração. O único país que ainda permite máquinas de primeira
+geração é o Brasil, que está em processo de substituição por máquinas de
+segunda geração, com confirmação impressa.
