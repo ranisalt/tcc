@@ -27,11 +27,6 @@ de testes de segurança. É consenso na comunidade de segurança digital que
 segurança por obscurantismo não é eficiente, e se a eleição acontece em uma
 "caixa preta" não existem meios de verificar a validade dos resultados.
 
-Este trabalho visa estudar e implementar uma solução de eleição remota baseada
-no sistema ADDER~\cite{kiayias2006internet}. No seu artigo, o autor citou
-trabalhos futuros a serem desenvolvidos no sistema que serão abordados no
-presente trabalho.
-
 \section{Justificativa}
 
 Em virtude dos ataques que exploram falhas de segurança, como os
@@ -48,3 +43,34 @@ internet é o meio de comunicação e interação mais ubíquo, a digitalizaçã
 sistemas de votação é de grande importância tanto pela acessibilidade
 permitida, quanto pela segurança provida pelas modernas técnicas de
 criptografia.
+
+\section{Objetivos}
+
+Este trabalho visa estudar uma solução de eleição remota com alto nível de
+segurança e privacidade baseada no sistema ADDER~\cite{kiayias2006internet}. No
+seu artigo, o autor citou trabalhos futuros a serem desenvolvidos no sistema
+que serão abordados no presente trabalho, e serão analisadas as implicações que
+as alterações possíveis teriam nos requisitos desejados das eleições.
+
+Para isto, serão analisados trabalhos existentes da área, investigando as
+principais soluções propostas na literatura revisada, a fim de encntrar
+restrições e oportunidades de aperfeiçoamento do trabalho. Ao fim, será
+proposta uma implementação de sistema de eleição online levando em consideração
+as preocupações destas soluções.
+
+A primeira etapa deste trabalho consiste no levantamento dos requisitos do
+sistema com relação aos problemas e garantias das eleições online. Em seguida,
+o estudo e implementação do sistema proposto e as possibilidades de
+melhoramento em comparação com outros sistemas de objetivo similar.
+
+A \autoref{sec:evolução dos sistemas de eleição} apresenta o histórico dos
+sistemas de eleição desde o início da democracia, e os avanços tecnológicos que
+os acompanharam. A \autoref{sec:sistemas criptográficos e eletrônicos} faz uma
+introdução de sistemas criptográficos e eletrônicos.
+
+O \autoref{ch:trabalhos correlatos} analisa trabalhos de objetivos similares na
+literatura, suas considerações e diferenças objetivas.
+
+No \autoref{ch:implementação}, são descritos cada um dos componentes que formam
+o sistema de eleição proposto, bem como se dá a interação entre eles quando
+tecnicamente separados e como garantem os requisitos de segurança esperados.

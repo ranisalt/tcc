@@ -1,11 +1,27 @@
 \section{Civitas}
 
-O sistema Civitas, descrito em \textcite{clarkson2008civitas}, tem suas raízes no \textit{Condorcet Internet Voting System} (CIVS), um sistema pesquisa online e aberto que permite qualquer usuário acesse o sistema e crie uma eleição.
+O sistema Civitas, descrito em \textcite{clarkson2008civitas}, tem suas raízes
+no \textit{Condorcet Internet Voting System} (CIVS), um sistema de pesquisa
+online e aberto que permite que qualquer usuário acesse o sistema e crie uma
+eleição.
 
-O Civitas é desenhado para resistir a coerção, permitindo que um eleitor ameaçado utilize credenciais falsas para votar sem modificação aparente no sistema, que será descartado na apuração, baseado em protocolo descrito por \textcite{juels2005coercion}.
+O Civitas é desenhado para resistir a coerção, permitindo que um eleitor
+ameaçado utilize credenciais falsas para votar sem modificação aparente no
+sistema, que será descartado na apuração, baseado em protocolo descrito por
+\textcite{juels2005coercion}.
 
-O eleitor também não pode se corromper propositalmente, pois não há prova de voto mesmo em caso de interação com o agressor no momento do voto, pois pode permitir votos múltiplos considerando o voto final no resultado.
+O eleitor também não pode se corromper propositalmente, pois não há prova de
+voto mesmo em caso de interação com o agressor no momento do voto, pois permite
+votos múltiplos considerando apenas o voto final no resultado.
 
-O sistema é compatível com diferentes modelos de cédulas, como cédulas de voto em candidato único, voto em conjunto de candidatos, e voto por classificação (opções ordenadas por preferência).
+O sistema é compatível com diferentes modelos de cédulas, como cédulas de voto
+em candidato único, voto em conjunto de candidatos, e voto por classificação
+(opções ordenadas por preferência).
 
-O Civitas utiliza um sistema criptográfico distribuído com resistência a falhas, sendo uma falha definida por um agente responsável (autoridade) pela eleição desvie do protocolo padrão, seja por comportamento malicioso, erros não intencionais ou simplesmente pela não colaboração~\cite{davis2008civitas}. Para estas situações, há uma quantidade mínima configurável de agentes necessários para realizar a apuração menor ou igual à quantidade total de agentes responsáveis.
+O Civitas utiliza um sistema criptográfico distribuído com resistência a
+falhas. Neste caso, uma falha acontece quando um agente responsável
+(autoridade) pela eleição desvia do protocolo padrão, seja por comportamento
+malicioso, erros não intencionais ou simplesmente pela não
+colaboração~\cite{davis2008civitas}. Para estas situações, há uma quantidade
+mínima configurável de agentes necessários para realizar a apuração menor ou
+igual à quantidade total de agentes responsáveis, de forma semelhante ao ADDER.

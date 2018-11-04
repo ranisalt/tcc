@@ -2,16 +2,16 @@
 
 O subsistema de cadastro e autenticação de eleitores é responsável por
 registrar os dados e confirmar a identidade dos eleitores que acessem o sistema
-de votação. Nos sistemas citados no \autoref{chap:trabalhos}, são utilizados
-diferentes sistemas de registro e autenticação, notadamente o uso de
+de votação. Nos sistemas citados no \autoref{ch:trabalhos correlatos}, são
+utilizados diferentes sistemas de registro e autenticação, notadamente o uso de
 \textit{tokens} enviados para os eleitores antes da votação.
 
 O sistema Helios tem suporte a \textit{plugins} de autenticação, suportando
 padrões abertos de \textit{single sign-on} como CAS, OAuth, Shibboleth e
 sistemas de identificação federados como o OpenID Connect através destes. Pode
 também, teoricamente, suportar autenticação através de \textit{smart cards} e
-outras formas de certificados digitais, mas seu repositório não integra estas
-soluções atualmente.
+outras formas de certificados digitais, mas seu repositório não integra nenhuma
+destas soluções de autenticação citadas atualmente.
 
 A terceirização do serviço de autenticação permite delegar a confiabilidade
 deste para outra autoridade dedicada. Por exemplo, diversas universidades

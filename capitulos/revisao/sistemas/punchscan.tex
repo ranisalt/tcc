@@ -1,13 +1,32 @@
 \subsection{Punchscan}
 
-O sistema Punchscan, descrito em~\cite{fisher2006punchscan}, é um sistema híbrido entre cédulas e dispositivos eletrônicos, que utiliza sensores óticos, implementa auditabilidade fim-a-fim dos resultados e emite um recibo de voto ao eleitor.
+O sistema Punchscan, descrito em~\cite{fisher2006punchscan}, é um sistema
+híbrido entre cédulas e dispositivos eletrônicos, que utiliza sensores óticos,
+implementa auditabilidade fim-a-fim dos resultados e emite um recibo de voto ao
+eleitor.
 
-Apesar de utilizar um software para contagem de votos, o Punchscan é independente deste. Sua segurança é baseada em premissas criptográficas em vez de depender da segurança do software, como nas urnas eletrônicas, e por isso pode ser executado em sistemas operacionais não confiáveis e ainda manter integridade incondicional.
+Apesar de utilizar um software para contagem de votos, o Punchscan é
+independente deste. Sua segurança é baseada em premissas criptográficas em vez
+de depender da segurança do software, como nas urnas eletrônicas, e por isso
+pode ser executado em sistemas operacionais não confiáveis e ainda manter
+integridade incondicional.
 
-A cédula do Punchscan é dividida em duas camadas. Na camada superior, os candidatos são listados com um símbolo ao lado do nome, e abaixo há uma série de furos redondos. Por estes furos, na camada inferior, estão os símbolos correspondentes aos candidatos.
+A cédula do Punchscan é dividida em duas camadas. Na camada superior, os
+candidatos são listados com um símbolo ao lado do nome, e abaixo há uma série
+de furos redondos. Por estes furos, na camada inferior, estão os símbolos
+correspondentes aos candidatos.
 
-Para efetuar um voto, o eleitor deve encontrar o furo com o símbolo correspondente ao candidato desejado e marcar com uma caneta especial que é propositalmente maior que o furo. O eleitor então separa as camadas, escolhe uma das duas para guardar como recibo e destrói a outra. O recibo é escaneado por um sensor ótico para tabulação do resultado.
+Para efetuar um voto, o eleitor deve encontrar o furo com o símbolo
+correspondente ao candidato desejado e marcar com uma caneta especial que é
+propositalmente maior que o furo. O eleitor então separa as camadas, escolhe
+uma das duas para guardar como recibo e destrói a outra. O recibo é escaneado
+por um sensor ótico para tabulação do resultado.
 
-A ordem dos candidatos na camada superior é disposta de forma pseudoaleatória, assim como a dos símbolos na camada inferior. Dessa forma, o recibo não contém informação suficiente para determinar o voto: se a camada superior é escolhida, a ordem dos símbolos nos furos é desconhecida; se a camada inferior é escolhida, a ordem dos símbolos referentes aos candidados é desconhecida.
+A ordem dos candidatos na camada superior é disposta de forma pseudoaleatória,
+assim como a dos símbolos na camada inferior. Dessa forma, o recibo não contém
+informação suficiente para determinar o voto: se a camada superior é escolhida,
+a ordem dos símbolos nos furos é desconhecida; se a camada inferior é
+escolhida, a ordem dos símbolos referentes aos candidados é desconhecida.
 
-Portanto, o Punchscan é resistente a coerção, uma vez que o eleitor não consegue provar em quem ele votou.
+Portanto, o Punchscan é resistente a coerção, uma vez que o eleitor não
+consegue provar em quem ele votou.
