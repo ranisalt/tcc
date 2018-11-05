@@ -1,0 +1,48 @@
+Neste trabalho, foi desenvolvida uma implementação de sistema de eleição online
+utilizando um esquema de criptografia homomórfica, com compartilhamento da
+chave privada entre as autoridades da eleição, e cuja interface com o usuário é
+desacoplada do sistema de armazenamento de dados, a fim de reduzir a quantidade
+de informação em tráfego e, com isso, diminuir a superfície de ataques.
+
+Este sistema é fundamentado em um protocolo robusto, porém simplificado para
+comportar eleições gerenciadas por autoridades e utilizadas por eleitores com
+menor conhecimento técnico sobre as primitivas criptográficas utilizadas.
+
+Embora devamos evitar atropelar as circunstâncias e tomar cuidado ao
+desenvolvermos uma alternativa baseada na internet para um novo sistema
+eleitoral, é bastante satisfatório observar a evolução da segurança
+computacional no passado recente. Enquanto eleições tem sido aplicadas durante
+muitos séculos, e computadores só tenham sido inventados num passado
+relativamente recente, eles tem rapidamente se tornado potenciais alternativas
+para os meios de diversas atividades, entre elas as eleições.
+
+O uso de sistemas criptográficos pode reforçar em ordens de magnitude a
+segurança e privacidade das eleições, de forma muito mais eficiente e com menos
+interferência humana do que os sistemas rudimentares de cédulas de papel, por
+exemplo. Isso certamente tornará eleições mais íntegras e protegidas quando
+estas premissas forem devidamente aplicadas.
+
+As ferramentas necessárias para o desenvolvimento de sistemas eleitorais pela
+internet estão em pleno desenvolvimento, como demonstrado nas novas tecnologias
+de segurança para navegadores e sistemas criptográficos modernos previamente
+citados. Estas ferramentas permitirão novos níveis de segurança, mais próximos
+do necessário para eleições.
+
+Analisando o histórico da humanidade e da democracia, podemos esperar que no
+futuro as eleições serão realizadas de forma descentralizada, e um sistema como
+o proposto forma uma sólida base sobre a qual as eleições em qualquer instância
+podem se tornar mais seguras, íntegras e práticas, considerando a intensa
+penetração dos dispositivos móveis e informação de todos os serviços públicos.
+
+O objetivo de construir uma solução com alto nível de segurança e privacidade
+foi atingido, considerando a utilização do protocolo ADDER como base, e a
+segurança provida pelo criptosistema de Paillier. Este criptosistema utiliza
+primitivas criptográficas bem estabelecidas, e sua segurança é baseada na
+dificuldade da fatoração de inteiros, que também provê a segurança do
+criptosistema RSA, amplamente utilizado.
+
+É importante salientar que as operações realizadas pela implementação são
+bastante limitadas, de forma que o sistema final realiza somente a tarefa de
+gerenciar a eleição, e explicitamente delega a tarefa de autenticação para um
+terceiro, a fim de minimizar a responsabilidade e melhorar a extensibilidade do
+sistema.

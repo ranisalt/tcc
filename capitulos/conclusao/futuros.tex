@@ -1,0 +1,44 @@
+\section{Trabalhos futuros}
+
+Um assunto que não foi abordado neste trabalho foi o aspecto legal de uma
+solução descentralizada como a proposta, ou como categorizar o dispositivo
+utilizado pelo eleitor em uma eleição descentralizada. Caso estes dispositivos
+sejam considerados parte do equipamento eleitoral, e portanto sujeitos à lei
+eleitoral, que criminaliza tentativas de quebra de sigilo e limita propaganda
+eleitoral, seria praticamente impossível fiscalizar dado que milhares de
+dispositivos estão em uso, portanto essa mudança de paradigma exigiria mudanças
+na lei eleitoral caso a implementação seja usada numa eleição governamental.
+
+O uso de uma infraestrutura de chaves públicas (\textbf{ICP}) para
+gerenciamento das chaves das autoridades no segundo passo do protocolo da
+eleição terceirizaria essa responsabilidade para um diretório dedicado,
+reduziria ainda mais as responsabilidades do sistema implementado e poderia
+tornar este passo totalmente automático, caso todas as autoridades já tivessem
+chaves públicas inseridas em uma ICP. Esta modificação no protocolo também
+aumenta o grau de confiança na identidade da autoridade, pois a tarefa de
+submeter a chave pública é feita por um terceiro, e não pela própria
+autoridade.
+
+Também seria interessante avaliar formas de remover a necessidade da entidade
+do administrador do sistema de uma eleição, embora este já possua
+responsabilidade reduzida, tornando o processo da eleição dependente somente
+das autoridades e eleitores. Esta é mais uma mudança de paradigma, pois
+eleições historicamente são gerenciadas por uma entidade dedicada, como o
+Tribunal Superior Eleitoral no caso das eleições governamentais, e demais
+comissões eleitorais.
+
+Uma tecnologia recente com potencial para melhorar a integridade do processo de
+uma eleição são \textit{blockchains}, registros de transações
+criptograficamente ligados em sequência. \textit{Blockchains} são fundamentadas
+por consenso descentralizado e poderiam ser usadas para garantir que o sistema
+não esteja modificando os votos de forma maliciosa ou por simples
+mal-funcionamento. Uma preocupação que deve ser tomada ao se introduzir uma
+\textit{blockchain} num sistema eleitoral é de prevenir o ordenamento dos
+votos, de forma a evitar a identificação do voto de um eleitor específico.
+
+Por fim, a implementação proposta precisa de uma verificação formal de seus
+aspectos de segurança antes de ser utilizada em uma eleição de grande escala,
+onde o nível de segurança proposto se faz necessário, como numa eleição
+governamental ou de uma grande empresa. Embora não tenha sido proposto nenhum
+novo algoritmo, é importante verificar a coesão de todos os procedimentos
+utilizados.
