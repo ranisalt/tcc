@@ -1,0 +1,16 @@
+\section{Biblioteca de primitivas criptográficas}
+
+Como esta implementação utiliza rotinas criptográficas genéricas, é possível
+criar uma biblioteca dedicada a estas primitivas, para ser usada não apenas
+nesta implementação, mas em qualquer \textit{software} que deseje utilizá-las.
+Dessa forma, o código pode ser testado mais vigorosamente por aplicações de
+diferentes finalidades, aumentando a confiabilidade e a probabilidade de que
+uma falha seja detectada~\cite{hursch1995separation}.
+
+Esta biblioteca é responsável pela geração dos números primos necessários no
+criptosistema utilizado, utilidades de verificação de primalidade, geração de
+pares de chaves e compartilhamento de segredos, que serão descritos nas
+próximas subseções.
+
+\input{paillier}
+\input{shamir}

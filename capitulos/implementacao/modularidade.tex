@@ -1,0 +1,85 @@
+\section{Modularidade}
+
+Seguindo tendências modernas para o desenvolvimento de sistemas \textit{web}, o
+\textit{software} que faz parte desta implementação é logicamente dividido
+entre \textit{back-end}, composto pelo \textit{ledger} e os serviços que este
+acessa (como os serviços de autenticação), e o \textit{front-end}, composto
+pelos clientes responsáveis pela interação com o usuário. Desta forma, é
+possível que cada parte tenha menos responsabilidade e possibilidades de falha
+do que o tradicional método, onde uma única aplicação faz tanto a interação com
+o usuário quanto a manipulação do banco de dados.
+
+Outra vantagem desta abordagem é que desenvolvedores independentes podem
+construir outros clientes, como aplicativos para celular ou até mesmo terminais
+especializados para esquemas de eleição alternativos baseados nesta
+implementação, sem a necessidade de modificar o \textit{back-end} para suportar
+tais adaptações.
+
+Esta tendência vem em conjunto com \textit{frameworks} para interfaces de
+usuário como Angular, React e Vue, que transferem a responsabilidade de
+apresentar as informações para o cliente, em vez de renderizar as páginas HTML
+no servidor. Técnicas agressivas de \textit{cache} também favorecem, já que a
+quantidade de informação transmitida entre o cliente e o servidor se limita ao
+mínimo necessário para cada atividade e há maior reutilização de código quando
+o conteúdo é construído dinamicamente~\cite{souders2008high}.
+
+\subsection{Comunicação entre os módulos}
+
+A comunicação entre o cliente e o servidor se dá através de uma linguagem de
+representação de dados, sendo a mais comum atualmente o \textbf{JSON}. O canal
+de comunicação precisa ser seguro e privado, portanto sempre ocorrendo por um
+canal com protocolo SSL ou TLS, como o HTTPS~\cite{rfc2818} no caso de um
+cliente de \textit{browser}.
+
+Computadores e celulares são rotineiramente atacados por software malicioso,
+como vírus e \textit{malwares}, e requerem cuidado especial da parte do
+usuário, no caso o eleitor. A segurança neste lado não pode ser garantida pelo
+sistema eleitoral e é, portanto, um empecilho para a adoção de sistemas de
+eleição pela internet, mas novas tecnologias e padrões recentemente
+desenvolvidos e implementados pelos navegadores permitem maiores níveis de
+segurança para aplicações \textit{web}.
+
+\subsubsection{Mitigação de vulnerabilidades}
+
+Dentre as tecnologias desenvolvidas nos últimos anos para mitigar
+vulnerabilidades no \textit{browser}, são as mais conhecidas:
+\textit{Content Security Policy} (\textbf{CSP}), que visa controlar recursos
+que uma aplicações \textit{web} pode executar~\cite{west2016csp};
+\textit{HTTP Strict Transport Security} (\textbf{HSTS}), que protege de ataques
+de \textit{downgrade} de protocolo, forçando acesso somente por canais
+criptografados e seguros~\cite{rfc6797}; \textit{HTTP Public Key Pinning}
+(\textbf{HPKP}), que associa chaves públicas com uma aplicação e evita riscos
+de ataques com certificados forjados~\cite{rfc7469};
+\textit{Subresource Integrity} (\textbf{SRI}), que provê formas do navegador
+assegurar que recursos foram corretamente transferidos sem
+manipulação~\cite{akhawe2016sri}; e as inúmeras recomendações da iniciativa
+\textit{Open Web Application Security Project} (\textbf{OWASP}), uma
+organização sem fins lucrativos que distribui documentação e ferramentas para
+segurança em aplicações \textit{web}. A maioria destas soluções diz respeito ao
+cliente, não ao servidor.
+
+No servidor, além dos cuidados com infecção maliciosa, que poderiam seriam
+evitadas por profissionais técnicos, também é necessário lidar com outros tipos
+de invasão e negação de serviço. Um ou mais \textit{insiders}, sejam eles
+técnicos ou programadores responsáveis pelo sistema podem manipular o software
+de forma indetectável, e as recentes acusações dos Estados Unidos sobre uma
+suposta manipulação nas suas eleições por espiões da Rússia certamente não
+melhora a opinião pública~\cite{badawy2018analyzing}.
+
+Ataques de negação de serviço (\textbf{DoS}, na sigla para
+\textit{Denial of Service}) ocorrem quando um agressor acessa um serviço com
+uma grande quantidade de dispositivos simultaneamente, com o objetivo de
+congestionar e sobrecarregar a rede e o servidor, impedindo que outros usuários
+o acessem.  Ataques desse tipo em larga escala tipicamente utilizam milhares ou
+milhões de computadores previamente infectados com vírus, dificultando sua
+mitigação, pois não há uma origem consistente dos acessos. Este tipo de ataque
+também pode ser utilizado para distrair equipes de segurança e explorar outras
+falhas no sistema enquanto as defesas estão focadas em mitigar a sobrecarga.
+
+Uma forma de ataque de negação de serviço conhecida como \textit{Slowloris},
+que consistem em abrir uma quantidade de conexões com o servidor maior do que
+ele pode suportar, mantendo-as abertas e impedindo que o servidor aceite novas
+conexões de usuários legítimos, foi utilizada em sites do governo iraniano
+durante as eleições presidenciais de 2009 após inúmeros
+protestos~\cite{zdrnja2009slowloris}.
+

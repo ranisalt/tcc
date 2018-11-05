@@ -7,6 +7,17 @@
   year={2008}
 }
 
+@TechReport{akhawe2016sri,
+  author={Devdatta Akhawe and Frederik Braun and Joel Weinberger and Francois Marier},
+  title={Subresource Integrity},
+  month=jun,
+  note={http://www.w3.org/TR/2016/REC-SRI-20160623/},
+  year={2016},
+  bibsource={http://w2.syronex.com/jmr/w3c-biblio},
+  type={{W3C} Recommendation},
+  institution={W3C},
+}
+
 @article{alvim2015integridade,
   title={Integridade eleitoral: significado e crit{\'e}rios de qualifica{\c{c}}{\~a}o},
   author={Alvim, Frederico Franco},
@@ -21,6 +32,13 @@
   title={Vulnerabilidades no software da urna eletr{\^o}nica brasileira},
   author={Aranha, Diego F and Karam, Marcelo Monte and de Miranda, Andr{\'e} and Scarel, Felipe},
   year={2012}
+}
+
+@article{badawy2018analyzing,
+  title={Analyzing the Digital Traces of Political Manipulation: The 2016 Russian Interference Twitter Campaign},
+  author={Badawy, Adam and Ferrara, Emilio and Lerman, Kristina},
+  journal={arXiv preprint arXiv:1802.04291},
+  year={2018}
 }
 
 @article{benaloh1987verifiable,
@@ -94,12 +112,12 @@
 }
 
 @misc{Credenti82:online,
-    author={Mike West},
-    title={Credential Management Level 1},
-    howpublished={\url{https://w3c.github.io/webappsec-credential-management/}},
-    month=jun,
-    year={2018},
-    note={Acesso em: 25 set 2018}
+  author={Mike West},
+  title={Credential Management Level 1},
+  howpublished={\url{https://w3c.github.io/webappsec-credential-management/}},
+  month=jun,
+  year={2018},
+  note={Acesso em: 25 set 2018}
 }
 
 @article{damgaard2010generalization,
@@ -179,6 +197,13 @@
   month=jul,
   publisher={Google Patents},
   note={US Patent 628,905}
+}
+
+@article{hursch1995separation,
+  title={Separation of concerns},
+  author={H{\"u}rsch, Walter L and Lopes, Cristina Videira},
+  year={1995},
+  publisher={Citeseer}
 }
 
 @inproceedings{juels2005coercion,
@@ -285,6 +310,51 @@
   publisher={Springer}
 }
 
+@misc{rfc2818,
+  series={Request for Comments},
+  number=2818,
+  howpublished={RFC 2818},
+  publisher={RFC Editor},
+  doi={10.17487/RFC2818},
+  url={https://rfc-editor.org/rfc/rfc2818.txt},
+  author={Eric Rescorla},
+  title={{HTTP Over TLS}},
+  pagetotal=7,
+  year=2000,
+  month=may,
+  abstract={This memo describes how to use Transport Layer Security (TLS) to secure Hypertext Transfer Protocol (HTTP) connections over the Internet. This memo provides information for the Internet community.},
+}
+
+@misc{rfc6797,
+  series={Request for Comments},
+  number=6797,
+  howpublished={RFC 6797},
+  publisher={RFC Editor},
+  doi={10.17487/RFC6797},
+  url={https://rfc-editor.org/rfc/rfc6797.txt},
+  author={Jeff Hodges and Collin Jackson and Adam Barth},
+  title={{HTTP Strict Transport Security (HSTS)}},
+  pagetotal=46,
+  year=2012,
+  month=nov,
+  abstract={This specification defines a mechanism enabling web sites to declare themselves accessible only via secure connections and/or for users to be able to direct their user agent(s) to interact with given sites only over secure connections. This overall policy is referred to as HTTP Strict Transport Security (HSTS). The policy is declared by web sites via the Strict-Transport-Security HTTP response header field and/or by other means, such as user agent configuration, for example. {[}STANDARDS-TRACK{]}},
+}
+
+@misc{rfc7469,
+  series={Request for Comments},
+  number=7469,
+  howpublished={RFC 7469},
+  publisher={RFC Editor},
+  doi={10.17487/RFC7469},
+  url={https://rfc-editor.org/rfc/rfc7469.txt},
+  author={Chris Evans and Chris Palmer and Ryan Sleevi},
+  title={{Public Key Pinning Extension for HTTP}},
+  pagetotal=28,
+  year=2015,
+  month=apr,
+  abstract={This document defines a new HTTP header that allows web host operators to instruct user agents to remember ("pin") the hosts' cryptographic identities over a period of time. During that time, user agents (UAs) will require that the host presents a certificate chain including at least one Subject Public Key Info structure whose fingerprint matches one of the pinned fingerprints for that host. By effectively reducing the number of trusted authorities who can authenticate the domain during the lifetime of the pin, pinning may reduce the incidence of man-in-the-middle attacks due to compromised Certification Authorities.},
+}
+
 @article{rivest2002lecture,
   title={Lecture notes 15: Voting, homomorphic encryption},
   author={Rivest, Lecturer Ron and Ledlie, Scribe and others},
@@ -355,23 +425,23 @@
 }
 
 @article{Shamir:1979:SS:359168.359176,
- author = {Shamir, Adi},
- title = {How to Share a Secret},
- journal = {Commun. ACM},
- issue_date = {Nov. 1979},
- volume = {22},
- number = {11},
- month = nov,
- year = {1979},
- issn = {0001-0782},
- pages = {612--613},
- numpages = {2},
- url = {http://doi.acm.org/10.1145/359168.359176},
- doi = {10.1145/359168.359176},
- acmid = {359176},
- publisher = {ACM},
- address = {New York, NY, USA},
- keywords = {cryptography, interpolation, key management},
+  author={Shamir, Adi},
+  title={How to Share a Secret},
+  journal={Commun. ACM},
+  issue_date={Nov. 1979},
+  volume={22},
+  number={11},
+  month=nov,
+  year={1979},
+  issn={0001-0782},
+  pages={612--613},
+  numpages={2},
+  url={http://doi.acm.org/10.1145/359168.359176},
+  doi={10.1145/359168.359176},
+  acmid={359176},
+  publisher={ACM},
+  address={New York, NY, USA},
+  keywords={cryptography, interpolation, key management},
 }
 
 @inproceedings{sherman2010scantegrity,
@@ -380,6 +450,17 @@
   booktitle={Electronic Voting},
   pages={45--61},
   year={2010}
+}
+
+@article{souders2008high,
+  title={High-performance web sites},
+  author={Souders, Steve},
+  journal={Communications of the ACM},
+  volume={51},
+  number={12},
+  pages={36--41},
+  year={2008},
+  publisher={ACM}
 }
 
 @inproceedings{Springall:2014:SAE:2660267.2660315,
@@ -401,18 +482,29 @@
 }
 
 @misc{tse2014tempomedio,
-    author={TSE},
-    title={Confira a estimativa de tempo médio de votação no segundo turno das Eleições 2014},
-    howpublished={\url{http://www.tse.jus.br/imprensa/noticias-tse/2014/Outubro/confira-a-estimativa-de-tempo-medio-de-votacao-no-segundo-turno-das-eleicoes-2014}},
-    month=oct,
-    year={2014},
-    note={Acesso em: 4 nov 2018}
+  author={TSE},
+  title={Confira a estimativa de tempo médio de votação no segundo turno das Eleições 2014},
+  howpublished={\url{http://www.tse.jus.br/imprensa/noticias-tse/2014/Outubro/confira-a-estimativa-de-tempo-medio-de-votacao-no-segundo-turno-das-eleicoes-2014}},
+  month=oct,
+  year={2014},
+  note={Acesso em: 4 nov 2018}
 }
 
 @article{van2013elections,
   title={Why Do Elections Fail? Explaining Election Integrity in Third and Fourth Wave Regimes},
   author={Van Ham, Carolien},
   year={2013}
+}
+
+@TechReport{west2016csp,
+  author={Mike West},
+  title={Content Security Policy Level 3},
+  month=sep,
+  note={https://www.w3.org/TR/2016/WD-CSP3-20160913/},
+  year={2016},
+  bibsource={http://w2.syronex.com/jmr/w3c-biblio},
+  type={{W3C} Working Draft},
+  institution={W3C},
 }
 
 @inproceedings{wolchok2010security,
@@ -433,4 +525,13 @@
   pages={1--21},
   year={1899},
   publisher={JSTOR}
+}
+
+@misc{zdrnja2009slowloris,
+  author={Bojan Zdrnja},
+  title={InfoSec Handlers Diary Blog - Slowloris and Iranian DDoS attacks},
+  journal={SANS Internet Storm Center},
+  year={2009},
+  month=jun,
+  url={https://isc.sans.edu/diary/Slowloris+and+Iranian+DDoS+attacks/6622}
 }
