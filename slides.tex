@@ -1,0 +1,137 @@
+\documentclass[14pt]{beamer}
+\usetheme[
+    numbering=none,
+    progressbar=frametitle,
+    sectionpage=none,
+]{metropolis}
+
+\usepackage{polyglossia}
+\setdefaultlanguage{brazil}
+
+\usepackage[style=abnt, language=brazil]{biblatex}
+\addbibresource{biblio.bib}
+
+\title{Implementação de um sistema de eleição remoto secreto e verificável}
+\author{Ranieri Schroeder Althoff \\ Orientadora: Taciane Martimiano}
+\date{\today}
+\institute{%
+    Universidade Federal de Santa Catarina -- UFSC
+    \par
+    Departamento de Informática e Estatística -- INE
+    \par
+    Programa de Graduação em Ciências da Computação}
+
+\begin{document}
+
+\maketitle
+
+\section{Introdução}
+
+\begin{frame}{\secname}
+    \begin{itemize}
+        \item<1-> Motivação
+        \only<1-1>{
+            \begin{itemize}
+                \item Popularização do acesso à internet
+                \item Praticidade e redução de custos
+                \item Evitar segurança por obscuridade
+            \end{itemize}
+        }
+
+        \item<2-> Justificativa
+        \only<2-2>{
+            \begin{itemize}
+                \item Falta de conhecimento da população
+                \item Digitização de sistemas em geral
+            \end{itemize}
+        }
+
+        \item<3-> Objetivos
+        \only<3-3>{
+            \begin{itemize}
+                \item Estudar uma solução de eleição remota verificável (ADDER)
+                \item Analisar trabalhos correlatos na literatura
+                \item Explorar implicações em segurança e privacidade do
+                    processo
+            \end{itemize}
+        }
+    \end{itemize}
+\end{frame}
+
+\section{Evolução dos sistemas de eleição}
+
+\begin{frame}{\secname}
+    \begin{itemize}
+        \item<1-> Voto por aclamação
+        \only<1-1>{
+            \begin{itemize}
+                \item Nenhum mecanismo de privacidade
+                \item Perfeita auditoria do resultado
+            \end{itemize}
+        }
+
+        \item<2-> Cédulas de papel
+        \only<2-2>{
+            \begin{itemize}
+                \item Possibilidade de sigilo do voto
+                \item Dificuldade para garantir confiabilidade
+                \item Acessibilidade com cédulas impressas
+            \end{itemize}
+        }
+
+        \item<3-> Máquinas mecânicas e eletrônicas
+        \only<3-3>{
+            \begin{itemize}
+                \item Peças móveis causam falhas e travamentos
+                \item Problemas no destaque de cartões perfurados
+                \item Dependência no \textit{software} utilizado
+            \end{itemize}
+        }
+
+        \item<4-> Urnas eletrônicas
+        \only<4-4>{
+            \begin{itemize}
+                \item \textbf{MUITA} dependência no \textit{software} utilizado
+                \item Descuido no uso de criptografia
+                \item Relatório de \textcite{aranha2012vulnerabilidades}
+            \end{itemize}
+        }
+
+    \end{itemize}
+\end{frame}
+
+\section{Trabalhos correlatos}
+
+\begin{frame}{\secname}
+    \begin{itemize}
+        \item<1-> ADDER
+        \only<1-1>{
+            \begin{itemize}
+                \item Criptografia homomórfica (\textit{ElGamal})
+                \item Chaves criptográficas distribuídas entre autoridades
+                \item Não armazena informações secretas
+            \end{itemize}
+        }
+
+        \item<2-> Civitas
+        \only<2-2>{
+            \begin{itemize}
+                \item Resistência à coerção e corrupção
+                \item Compatível com diferentes tipos de votação
+                \item Também distribui chaves
+            \end{itemize}
+        }
+
+        \item<3-> Helios
+        \only<3-3>{
+            \begin{itemize}
+                \item Integração com serviços de autenticação (\textit{CAS},
+                    \textit{OAuth}, \textit{Shibboleth})
+                \item Possibilidade de auditar cada passo
+                \item Maior foco em usabilidade e intuitividade
+            \end{itemize}
+        }
+    \end{itemize}
+\end{frame}
+
+\end{document}

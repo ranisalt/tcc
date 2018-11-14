@@ -1,4 +1,4 @@
-@default_files = ('main.tex');
+@default_files = ('main.tex', 'slides.tex');
 
 $pdflatex = "xelatex -synctex=1 %O %S";
 $pdf_mode = 1;
