@@ -5,7 +5,7 @@
     sectionpage=none,
 ]{metropolis}
 
-\usepackage{polyglossia}
+\usepackage{csquotes,polyglossia}
 \setdefaultlanguage{brazil}
 
 \usepackage[style=abnt, language=brazil]{biblatex}
@@ -130,6 +130,43 @@
                 \item Possibilidade de auditar cada passo
                 \item Maior foco em usabilidade e intuitividade
             \end{itemize}
+        }
+    \end{itemize}
+\end{frame}
+
+\section{Implementação}
+
+\begin{frame}{\secname}
+    \begin{itemize}
+        \item<1-> Criptosistema de Paillier
+        \only<1-1>{
+            \begin{itemize}
+                \item Algoritmo probabilístico
+                    \begin{equation*}
+                    \begin{aligned}
+                        c &= g^m \cdot r^n \bmod{n^2} \\
+                        m &= \frac{\left( c^\lambda \bmod{n^2} \right) - 1}{n} \cdot \mu \bmod{n}
+                    \end{aligned}
+                    \end{equation*}
+
+                \item Criptografia homomórfica aditiva
+                    \begin{equation*}
+                    \begin{aligned}
+                        D \left( E \left( m_1 \right) \cdot E \left( m_2 \right) \bmod{n^2} \right) &= m_1 + m_2 \bmod{n} \\
+                        D \left( E \left( m_1 \right)^k \bmod{n^2} \right) &= k m_1 \bmod{n}
+                    \end{aligned}
+                    \end{equation*}
+            \end{itemize}
+        }
+
+        \item<2-> Compartilhamento de segredos de Shamir
+        \only<2-2>{
+            \begin{itemize}
+                \item Divisão da chave privada entre $n$ autoridades
+                \item Pelo menos $k$ autoridades precisam colaborar para recuperar a chave
+            \end{itemize}
+
+            \framebox{\small $k$ pontos definem polinômio de grau $k-1$}
         }
     \end{itemize}
 \end{frame}
