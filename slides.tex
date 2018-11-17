@@ -138,8 +138,16 @@
 
 \begin{frame}{\secname}
     \begin{itemize}
-        \item<1-> Criptosistema de Paillier
+        \item<1-> Autenticação terceirizada
         \only<1-1>{
+            \begin{itemize}
+                \item Serviços de OAuth e OpenID
+                \item Separação de responsabilidades
+            \end{itemize}
+        }
+
+        \item<2-> Criptosistema de Paillier
+        \only<2-2>{
             \begin{itemize}
                 \item Algoritmo probabilístico
                     \begin{equation*}
@@ -159,8 +167,8 @@
             \end{itemize}
         }
 
-        \item<2-> Compartilhamento de segredos de Shamir
-        \only<2-2>{
+        \item<3-> Compartilhamento de segredos de Shamir
+        \only<3-3>{
             \begin{itemize}
                 \item Divisão da chave privada entre $n$ autoridades
                 \item Pelo menos $k$ autoridades precisam colaborar para recuperar a chave
@@ -168,6 +176,53 @@
 
             \framebox{\small $k$ pontos definem polinômio de grau $k-1$}
         }
+
+        \item<4-> HTTPS, CSP, HSTS, HPKP, SRI, \ldots
+    \end{itemize}
+\end{frame}
+
+\section{Protocolo}
+
+\begin{frame}{\secname}
+    \begin{enumerate}
+        \item Enviar os parâmetros da nova eleição
+        \item Envio das chaves privadas às autoridades
+        \item Geração e distribuição do par de chaves
+        \item Coleta de votos
+        \item Totalização dos votos cifrados
+        \item Decifragens parciais pelas autoridades
+        \item Combinação e publicação dos resultados
+    \end{enumerate}
+
+    \framebox{\small Simplificação do protocolo ADDER}
+\end{frame}
+
+\section{Trabalhos futuros}
+
+\begin{frame}{\secname}
+    \begin{itemize}
+        \item<1-> Infraestrutura de chaves públicas
+        \only<1-1>{
+            \begin{itemize}
+                \item Separação de responsabilidades
+            \end{itemize}
+        }
+
+        \item<2-> Remoção da responsabilidade do administrador do sistema
+        \only<2-2>{
+            \begin{itemize}
+                \item Mudança de paradigma
+            \end{itemize}
+        }
+
+        \item<3-> \textit{Blockchain}
+        \only<3-3>{
+            \begin{itemize}
+                \item Consenso descentralizado dos valores
+            \end{itemize}
+        }
+
+        \item<4-> Verificação formal
     \end{itemize}
 \end{frame}
 
