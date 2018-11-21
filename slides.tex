@@ -1,9 +1,15 @@
-\documentclass[14pt]{beamer}
+\documentclass[
+    14pt, % base font size
+    % aspectratio=169, % aspect ratio
+]{beamer}
 \usetheme[
     numbering=none,
     progressbar=frametitle,
     sectionpage=none,
 ]{metropolis}
+
+\usepackage{pgfpages}
+\setbeameroption{show notes on second screen}
 
 \usepackage{csquotes,polyglossia}
 \setdefaultlanguage{brazil}
@@ -36,6 +42,15 @@
                 \item Praticidade e redução de custos
                 \item Evitar segurança por obscuridade
             \end{itemize}
+
+            \note{%
+                Este trabalho tem como motivação popularizar o voto pela
+                internet por uma alternativa, usando a computação como forma de
+                aumentar a privacidade e reduzir os custos de eleições, e
+                diferente dos sistemas eleitorais usados hoje em dia evitar
+                obter segurança por obscuridade, usando algoritmos livres com
+                bastante estudo na literatura.
+            }
         }
 
         \item<2-> Justificativa
@@ -44,6 +59,14 @@
                 \item Falta de conhecimento da população
                 \item Digitização de sistemas em geral
             \end{itemize}
+
+            \note{%
+                Como justificativa, notou-se desconhecimento generalizado da
+                população acerca de meios eletrônicos para votação, como no
+                caso das urnas eletrônicas mesmo após 20 anos da instalação.
+                Além disso, há uma tendência de digitização de sistemas em
+                geral, como prestação de serviços governamentais.
+            }
         }
 
         \item<3-> Objetivos
@@ -54,6 +77,14 @@
                 \item Explorar implicações em segurança e privacidade do
                     processo
             \end{itemize}
+
+            \note{%
+                Os objetivos são estudar um protocolo de eleição remota
+                verificável chamado ADDER, cujo desenvolvimento se deu em 2007,
+                analisar em conjunto trabalhos correlatos da literatura e
+                explorar as implicações em segurança e privacidade que cada
+                decisão impõe.
+            }
         }
     \end{itemize}
 \end{frame}
@@ -68,6 +99,16 @@
                 \item Nenhum mecanismo de privacidade
                 \item Perfeita auditoria do resultado
             \end{itemize}
+
+            \note{%
+                O primeiro sistema que se conhece é o voto por aclamação, onde
+                cada eleitor anunciava seu voto em voz alta. Esse sistema,
+                notadamente, não tem nenhum mecanismo de privacidade, mas
+                permite uma auditoria perfeita do resultado uma vez que
+                qualquer eleitor pode anotar os votos e conferir o resultado.
+                Perceberemos que a perfeita confiabilidade do resultado e a
+                perfeita privacidade do voto são incompatíveis.
+            }
         }
 
         \item<2-> Cédulas de papel
@@ -77,6 +118,16 @@
                 \item Dificuldade para garantir confiabilidade
                 \item Acessibilidade com cédulas impressas
             \end{itemize}
+
+            \note{%
+                Como forma de buscar algum sigilo, foram introduzidas as
+                cédulas de papel. Era mais difícil auditar o resultado, e esse
+                sistema foi usado por tanto tempo que foram desenvolvidas
+                inúmeras fraudes. As cédulas com candidados impressos em vez de
+                em branco auxiliaram na acessibilidade das eleições uma vez que
+                não era mais necessário saber escrever, mas se tornou
+                necessário saber ler.
+            }
         }
 
         \item<3-> Máquinas mecânicas e eletrônicas
@@ -86,6 +137,14 @@
                 \item Problemas no destaque de cartões perfurados
                 \item Dependência no \textit{software} utilizado
             \end{itemize}
+
+            \note{%
+                Partimos então para as máquinas mecânicas e eletrônicas, que
+                eram eficientes, reduziam custos, mas quebravam com facilidade
+                por causa de partes móveis e outras falhas com os meios, como
+                cartões perfurados que não destacavam corretamente. Também
+                criavam um ponto de falha no software utilizado.
+            }
         }
 
         \item<4-> Urnas eletrônicas
@@ -95,6 +154,14 @@
                 \item Descuido no uso de criptografia
                 \item Relatório de \textcite{aranha2012vulnerabilidades}
             \end{itemize}
+
+            \note{%
+                O que há de mais moderno no Brasil são as urnas eletrônicas,
+                que dependem quase que totalmente do software utilizado, ainda
+                mais que as anteriores. Além disso, os poucos relatórios que
+                puderam ser publicados indicam graves falhas nos componentes
+                criptográficos, beirando a inconstitucionalidade.
+            }
         }
 
     \end{itemize}
@@ -111,6 +178,18 @@
                 \item Chaves criptográficas distribuídas entre autoridades
                 \item Não armazena informações secretas
             \end{itemize}
+
+            \note{%
+                O ADDER, principal influência deste trabalho, é um protocolo
+                que utiliza criptografia homomórfica para armazenamento dos
+                votos, que será detalhado adiante. Ele também define que as
+                chaves criptográfias são distribuídas entre autoridades, sejam
+                elas comissões eleitorais, partidos interessados ou até
+                eleitores, de forma que o sistema sozinho não possa decifrar o
+                resultado. É construído sobre um servidor que não armazena
+                nenhuma informação secreta, somente votos criptografados e
+                chaves públicas.
+            }
         }
 
         \item<2-> Civitas
@@ -120,6 +199,14 @@
                 \item Compatível com diferentes tipos de votação
                 \item Também distribui chaves
             \end{itemize}
+
+            \note{%
+                O Civitas é ligeiramente diferente por ser voltado a pesquisas
+                em vez de eleições, e combate ativamente coerção e corrupção
+                dos eleitores e autoridades. Ele possui outros tipos de votação
+                além de voto majoritário. As chaves também são distribuídas
+                entre participantes.
+            }
         }
 
         \item<3-> Helios
@@ -130,6 +217,15 @@
                 \item Possibilidade de auditar cada passo
                 \item Maior foco em usabilidade e intuitividade
             \end{itemize}
+
+            \note{%
+                O Helios é um sistema mais prático, que possui integração com
+                serviços de login como CAS (usado na UFSC), OAuth (login por
+                Google e Facebook), entre outros. Ele permite auditoria de
+                todas as etapas, e o eleitor pode conferir se seu voto foi
+                contado ao final. Ele é focado em usabilidade e intuitividade
+                em vez de perfeita segurança.
+            }
         }
     \end{itemize}
 \end{frame}
@@ -144,6 +240,16 @@
                 \item Serviços de OAuth e OpenID
                 \item Separação de responsabilidades
             \end{itemize}
+
+            \note{%
+                A implementação proposta se inicia pelo serviço terceirizado de
+                autenticação, usando protocolos como OAuth e OpenID para
+                efetuar autenticação dos usuários de forma independente do
+                servidor de eleição. Notadamente, serviços como Google e
+                Facebook são suficientes para eleições médias, enquanto
+                eleições governamentais podem usar serviços de certificados
+                digitais para isso.
+            }
         }
 
         \item<2-> Criptosistema de Paillier
@@ -165,6 +271,18 @@
                     \end{aligned}
                     \end{equation*}
             \end{itemize}
+
+            \note{%
+                Os votos são criptografados utilizando o criptosistema de
+                Paillier, que é probabilístico, ou seja, sucessivas cifragens
+                da mesma combinação de votos geram cifras diferentes, evitando
+                a possibilidade de se revelar um voto sem a chave privada. O
+                criptosistema é homomórfico para adição, ou seja, é possível
+                obter a soma de duas mensagens originais operando somente nas
+                mensagens cifradas. Essa propriedade é usada para que o sistema
+                possa obter um somatório dos votos sem decifrá-los um a um ao
+                final da eleição.
+            }
         }
 
         \item<3-> Compartilhamento de segredos de Shamir
@@ -175,9 +293,28 @@
             \end{itemize}
 
             \framebox{\small $k$ pontos definem polinômio de grau $k-1$}
+
+            \note{%
+                O compartilhamento de segredos de Shamir é usado para dividir
+                uma chave privada entre n autoridades de forma que um
+                subconjunto k menor ou igual a n das autoridades possa
+                reestabeler a chave privada original. Dessa forma, um agressor
+                precisa corromper ao menos k autoridades para obter vantagem no
+                processo, e esse k pode ser configurado para que isso seja
+                improvável de acontecer.
+            }
         }
 
         \item<4-> HTTPS, CSP, HSTS, HPKP, SRI, \ldots
+        \only<4-4>{
+            \note{%
+                Além disso, medidas de segurança e privacidade do protocolo
+                HTTP são naturalmente adotadas, como HTTPS para proteger o
+                canal de votação, HSTS e HPKP para evitar o vazamento de
+                certificados digitais, CSP e SRI para evitar injeção de
+                conteúdo malicioso na interface, entre outros.
+            }
+        }
     \end{itemize}
 \end{frame}
 
@@ -195,6 +332,12 @@
     \end{enumerate}
 
     \framebox{\small Simplificação do protocolo ADDER}
+
+    \note{%
+        O protocolo usado é uma simplificação do ADDER, uma vez que o ADDER
+        utiliza o criptosistema de ElGamal que tem mais etapas na geração de
+        chaves. <Ler passos>
+    }
 \end{frame}
 
 \section{Trabalhos futuros}
@@ -202,12 +345,28 @@
 \begin{frame}{\secname}
     \begin{itemize}
         \item<1-> Infraestrutura de chaves públicas
+        \only<1-1>{
+            \note{%
+                Uma possível melhoria nesta implementação é o uso de uma
+                infraestrutura de chaves públicas para gerenciar as chaves das
+                autoridades e reforçar a autenticação dos usuários.
+            }
+        }
 
         \item<2-> Remoção da responsabilidade do administrador do sistema
         \only<2-2>{
             \begin{itemize}
                 \item Mudança de paradigma
             \end{itemize}
+
+            \note{%
+                A figura de administrador do sistema poderia ser substituída
+                por um consenso entre as autoridades, de forma que o
+                administrador não seja mais diretamente necessário nas
+                eleições. Isso geraria uma mudança de paradigma, uma vez que
+                eleições em geral dependem de uma comissão eleitoral (como o
+                TSE) que administram o procedimento.
+            }
         }
 
         \item<3-> \textit{Blockchain}
@@ -215,9 +374,26 @@
             \begin{itemize}
                 \item Consenso descentralizado dos valores
             \end{itemize}
+
+            \note{%
+                O uso da tecnologia de blockchain pode descentralizar o
+                consenso dos votos, de forma que em vez de corromper
+                autoridades, um agressor precise corromper ao menos metade do
+                total de eleitores, tornando virtualmente impossível manipular
+                os resultados. É necessário cuidar para evitar a possibilidade
+                de traçar o voto de um eleitor específico.
+            }
         }
 
         \item<4-> Verificação formal
+        \only<4-4>{
+            \note{%
+                Embora não tenha sido proposto nenhum novo algoritmo na
+                elaboração desse trabalho, uma verificação formal do
+                funcionamento conjunto das partes garantiria confiabilidade nos
+                resultados de uma eleição nos moldes dessa implementação.
+            }
+        }
     \end{itemize}
 \end{frame}
 
