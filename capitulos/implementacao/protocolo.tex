@@ -16,7 +16,17 @@ que emite \textit{tokens} com os quais os usuários podem se autenticar com o
 
 O procedimento de execução de uma eleição é dividido em passos sequenciais para
 criar as informações necessárias, receber os votos e calcular o resultado
-final.
+final, listados:
+
+\begin{enumerate}
+    \item Enviar os parâmetros da nova eleição
+    \item Envio das chaves privadas das autoridades
+    \item Geração e distribuição do par de chaves
+    \item Coleta de votos
+    \item Totalização dos votos cifrados
+    \item Decifragens parciais pelas autoridades
+    \item Combinação e publicação dos resultados
+\end{enumerate}
 
 Para criar uma nova eleição, um administrador do sistema envia os parâmetros da
 nova eleição para o \textit{ledger} através da interface \textit{web}. Estes

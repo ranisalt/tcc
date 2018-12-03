@@ -6,11 +6,11 @@ de votação. Nos sistemas citados no \autoref{ch:trabalhos correlatos}, são
 utilizados diferentes sistemas de registro e autenticação, notadamente o uso de
 \textit{tokens} enviados para os eleitores antes da votação.
 
-O Brasil já possui alguns sistemas que utilizam de autenticação eletrônica, na
+O Brasil já possui alguns sistemas que utilizam autenticação eletrônica, na
 forma de certificados digitais, como o e-CNPJ. Esse tipo de autenticação provê
 muito mais segurança do que assinaturas físicas, pois anula a possibilidade de
-falsificação de identidade, ou seja, garantidamente o portador de um
-certificado digital é o seu dono e não um impostor.
+falsificação de identidade, ou seja, o portador de um certificado digital
+e-CNPJ é o seu dono dada a dificuldade em se falsificar um certificado.
 
 Essa modalidade de autenticação é bastante flexível, sendo utilizada também por
 bancos para autenticar os dispositivos utilizados pelos clientes, sejam
@@ -20,12 +20,13 @@ deve-se utilizar mais de um fator de autenticação para evitar clonagem ou roub
 das credenciais, sendo bastante comum na internet os \textit{tokens} baseados
 no tempo (\textit{time-based one-time password} ou \textbf{TOTP}).
 
-O sistema Helios tem suporte a \textit{plugins} de autenticação, suportando
-padrões abertos de \textit{single sign-on} como CAS, OAuth, Shibboleth e
-sistemas de identificação federados como o OpenID Connect através destes. Pode
-também, teoricamente, suportar autenticação através de \textit{smart cards} e
-outras formas de certificados digitais, mas seu repositório não integra nenhuma
-destas soluções de autenticação citadas atualmente.
+O sistema Helios, de acordo com o código em seu repositório, tem suporte a
+\textit{plugins} de autenticação, suportando padrões abertos de
+\textit{single sign-on} como CAS, OAuth, Shibboleth e sistemas de identificação
+federados como o OpenID Connect através destes. Pode também, teoricamente,
+suportar autenticação através de \textit{smart cards} e outras formas de
+certificados digitais, mas seu repositório não integra nenhuma destas soluções
+de autenticação citadas atualmente.
 
 A terceirização do serviço de autenticação permite delegar a confiabilidade
 deste para outra autoridade dedicada. Por exemplo, diversas universidades

@@ -12,7 +12,7 @@ fizeram de forma que robustez, segurança e confiabilidade das eleições depend
 inteiramente do \textit{software} sendo executado pelos terminais. Se estes
 terminais pudessem ser manipulados, seja por eleitores ou desenvolvedores
 inescrupulosos, ou até pelo sistema operacional utilizado, a precisão dos
-resultados é posta em xeque.
+resultados se torna duvidosa.
 
 Nos Estados Unidos, a lei federal denominada \textit{Help America Vote Act}
 (HAVA), de 2002, tinha por objetivo incentivar a substituição dos sistemas de
@@ -44,18 +44,14 @@ um cartão de memória com código malicioso em menos de um minuto, situação
 plausível uma vez que os operadores das urnas frequentemente as operam sem
 supervisão.
 
-No discurso popular de tempos recentes, existem críticas ferrenhas ao modelo
-atual das urnas eletrônicas, das quais já foram encontradas inúmeras brechas de
-segurança nos últimos testes públicos, mesmo estes testes sendo executados sob
-forte vigilância do tribunal responsável. Em paralelo, escândalos de corrupção,
-compra de votos e afins apenas dão razão aos desafetos da evolução tecnológica
-do nosso sistema eleitoral.
-
 Dentre os poucos relatórios de agentes externos sobre os componentes internos
 da urna eletrônica, certamente o mais conhecido e completo é o de
-\textcite{aranha2012vulnerabilidades}, que apontou diversos problemas de
+\textcite{aranha2012vulnerabilidades}, que descreveu diversos problemas de
 segurança no \textit{software} executado na urna e também na maneira como o
-órgão responsável modelou os potenciais vetores de ataque ao sistema.
+órgão responsável modelou os potenciais vetores de ataque ao sistema, por
+exemplo, a possibilidade de se desfazer o embaralhamento do registro dos votos
+e obter a ordem com a qual cada voto foi inserido, potencialmente quebrando o
+sigilo do eleitor.
 
 A situação não é melhor em implementações utilizadas por outros países além do
 Brasil. Na maior democracia do mundo, a Índia, uma louvável iniciativa do

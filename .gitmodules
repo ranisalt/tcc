@@ -1,9 +1,0 @@
-[submodule "ufsctex"]
-	path = ufsctex
-	url = git@github.com:royertiago/ufsctex.git
-[submodule "tex-githooks"]
-	path = tex-githooks
-	url = git@github.com:royertiago/tex-githooks.git
-[submodule "sbc"]
-	path = sbc
-	url = git@github.com:royertiago/sbc.git
