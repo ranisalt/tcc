@@ -1,0 +1,41 @@
+% !TEX program = xelatex
+\documentclass[12pt]{paper}
+\usepackage{sbc/sbc-template}
+
+% \usepackage{hyperref}
+\usepackage[style=abnt,language=brazil]{biblatex}
+\usepackage{import}
+\usepackage{indentfirst}
+\usepackage{microtype}
+\newcommand{\autoref}{}
+
+\sloppy
+
+\let\chapter\section
+\let\section\subsection
+\let\subsection\subsubsection
+\let\subsubsection\paragraph
+\let\paragraph\subparagraph
+
+\setlength{\parindent}{1.25cm}% proper indent length
+
+\title{Implementação de um sistema de eleição remoto secreto e verificável}
+\author{Ranieri Schroeder Althoff\inst{1}, Taciane Martimiano\inst{1}}
+\address{%
+    Universidade Federal de Santa Catarina -- UFSC \\
+    Departamento de Informática e Estatística -- INE \\
+    Programa de Graduação em Ciências da Computação}
+
+%\nocite{*}
+\bibliography{biblio}
+
+\begin{document}
+
+\maketitle
+
+\subimport{capitulos/implementacao/}{index}
+\subimport{capitulos/conclusao/}{index}
+
+\printbibliography
+
+\end{document}
